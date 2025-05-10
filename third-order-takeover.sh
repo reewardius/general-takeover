@@ -69,7 +69,7 @@ httpx -l naabu.txt -rl 500 -t 200 -o alive_http_services.txt
 
 # getJS
 echo "[4/6] getJS — сбор JavaScript-файлов"
-getJS -input alive_http_services.txt -complete -output js.txt
+getJS -input alive_http_services.txt -complete -threads 100 -output js.txt
 
 # httpx + парсинг JS
 echo "[5/6] httpx — скачивание JS и парсинг URL"
