@@ -75,7 +75,7 @@ getJS -input alive_http_services.txt -complete -output js.txt
 echo "[5/6] httpx — скачивание JS и парсинг URL"
 httpx -l js.txt -sr -srd js_responses/
 
-find js_responses/responses/ -type f -exec cat {} + | \
+find js_responses/response/ -type f -exec cat {} + | \
   grep -Eo 'https?://[a-zA-Z0-9._~:/?#@!$&'"'"'()*+,;=%-]+' | \
   sort -u > urls.txt
 
