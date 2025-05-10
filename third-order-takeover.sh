@@ -2,13 +2,46 @@
 
 set -euo pipefail
 
+# Парсинг аргументов
+domain=""
+file=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d)
+      domain="$2"
+      shift 2
+      ;;
+    -f)
+      file="$2"
+      shift 2
+      ;;
+    *)
+      echo "❌ Неизвестный аргумент: $1"
+      echo "Использование: $0 [-d target.com] | [-f root.txt]"
+      exit 1
+      ;;
+  esac
+done
+
+if [[ -z "$domain" && -z "$file" ]]; then
+  echo "❗ Укажите либо -d target.com, либо -f root.txt"
+  exit 1
+fi
+
 echo "[*] Очистка предыдущих файлов..."
 rm -f subs.txt naabu.txt alive_http_services.txt js.txt urls.txt domains.txt subdomain_takeovers_results.txt
 rm -rf js_responses/
 mkdir -p js_responses
 
-echo "[1/6] subfinder — поиск поддоменов из root.txt"
-subfinder -dL root.txt -all -silent -o subs.txt
+echo "[1/6] subfinder — поиск поддоменов"
+if [[ -n "$domain" ]]; then
+  echo "[*] Целевой домен: $domain"
+  subfinder -d "$domain" -all -silent -o subs.txt
+else
+  echo "[*] Список доменов из файла: $file"
+  subfinder -dL "$file" -all -silent -o subs.txt
+fi
 
 echo "[2/6] naabu — сканирование портов"
 naabu -l subs.txt -s s -tp 100 -ec -c 50 -o naabu.txt
