@@ -95,7 +95,7 @@ nuclei -profile subdomain-takeovers -l domains.txt -nh -o third_party_takeovers.
 
 # katana second-order discovery
 echo "[*] katana — second-order takeover"
-katana -u alive_http_services.txt -d 1 -headless -silent -o second_order_urls.txt
+katana -u alive_http_services.txt -d 1 -headless -nos -silent -o second_order_urls.txt
 unfurl --unique domains < second_order_urls.txt > second_order_domains.txt
 nuclei -profile subdomain-takeovers -l second_order_domains.txt -nh -o subdomain_second_takeovers_results.txt
 
