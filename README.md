@@ -19,6 +19,7 @@ go install -v github.com/tomnomnom/unfurl@latest
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 ```
 🚀 Usage
+
 You can run the script with either a single domain or a file containing domains:
 ```bash
 bash third-order-takeover.sh -d vulnweb.com        # For a single root domain
