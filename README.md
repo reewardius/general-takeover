@@ -1,5 +1,6 @@
 # third-order-takeover
 🛠 Dependencies
+
 Before running the script, make sure the following tools are installed and available in your $PATH:
 - subfinder
 - naabu
