@@ -23,7 +23,7 @@ Manual Install https://github.com/tomnomnom/hacks/tree/master/html-tool
 
 You can run the script with either a single domain or a file containing domains:
 ```bash
-bash third-order-takeover.sh -d vulnweb.com        # For a single root domain
-bash third-order-takeover.sh -d testphp.vulnweb.com -ds  # For a single subdomain
-bash third-order-takeover.sh -f root.txt           # For multiple root domains
+bash general-takeover-last.sh -d vulnweb.com        # For a single root domain
+bash general-takeover-last.sh -d testphp.vulnweb.com -ds  # For a single subdomain
+bash general-takeover-last.sh -f root.txt           # For multiple root domains
 ```
