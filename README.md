@@ -8,6 +8,7 @@ Before running the script, make sure the following tools are installed and avail
 - getJS
 - unfurl
 - nuclei
+- html-tool
 
 You can install them with:
 ```
