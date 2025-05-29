@@ -25,7 +25,7 @@ Manual Install https://github.com/reewardius/cspgrabber
 
 You can run the script with either a single domain or a file containing domains:
 ```bash
-bash general-takeover-last.sh -d vulnweb.com        # For a single root domain
-bash general-takeover-last.sh -d testphp.vulnweb.com -ds  # For a single subdomain
-bash general-takeover-last.sh -f root.txt           # For multiple root domains
+sudo bash general-takeover-last.sh -d vulnweb.com        # For a single root domain
+sudo bash general-takeover-last.sh -d testphp.vulnweb.com -ds  # For a single subdomain
+sudo bash general-takeover-last.sh -f root.txt           # For multiple root domains
 ```
