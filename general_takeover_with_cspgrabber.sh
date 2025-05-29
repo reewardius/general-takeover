@@ -115,7 +115,7 @@ html-tool attribs src href < alive_http_services.txt > html-tool.txt
 unfurl --unique domains < html-tool.txt > html-tool-domains.txt
 
 echo "[*] nuclei — takeover (html-tool domains)"
-nuclei -l html-tool-domains.txt -profile subdomain-takeovers -nh -o one-subdomains-takeover.txt
+nuclei -l html-tool-domains.txt -profile subdomain-takeovers -nh -o html-subdomains-takeover.txt
 
 # CSP-based domains
 echo "[*] nuclei — takeover (CSP domains)"
@@ -138,5 +138,5 @@ echo "- Domains from URLs: domains.txt ($(wc -l < domains.txt) domains)"
 echo "- Takeover (direct subs): subdomains_takeover.txt ($(wc -l < subdomains_takeover.txt) findings)"
 echo "- Takeover (from JS): third_party_takeovers.txt ($(wc -l < third_party_takeovers.txt) findings)"
 echo "- Takeover (katana 2nd-order): subdomain_second_takeovers_results.txt ($(wc -l < subdomain_second_takeovers_results.txt) findings)"
-echo "- Takeover (html-tool): one-subdomains-takeover.txt ($(wc -l < one-subdomains-takeover.txt) findings)"
+echo "- Takeover (html-tool): one-subdomains-takeover.txt ($(wc -l < html-subdomains-takeover.txt) findings)"
 echo "- Takeover (CSP): csp-domains-takeover.txt ($(wc -l < csp-domains-takeover.txt) findings)"
