@@ -19,6 +19,7 @@ go install -v github.com/003random/getJS/v2@latest
 go install -v github.com/tomnomnom/unfurl@latest
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 Manual Install https://github.com/tomnomnom/hacks/tree/master/html-tool
+Manual Install https://github.com/reewardius/cspgrabber
 ```
 🚀 Usage
 
